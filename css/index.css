@@ -134,3 +134,63 @@ button:hover{
 .artist img{
     width:100%;
 }
+
+
+/*----------------------------------------*/
+New styles start here:
+/*----------------------------------------*/
+.navCurrent {
+    font-weight:bold;
+}
+
+.title-container h1{
+    font-weight:bold;
+    font-size:4rem;
+    line-height:1.2;
+}
+
+@media (max-width:500px){
+    body {
+        /* background-color:fuchsia; */
+    }
+    img {	
+        height:none;	
+    }
+
+    nav a {
+        padding:0 10%;
+    }
+
+
+
+
+    .title-container button {
+        margin:2% 0 0 0;
+        padding:2.5% 6%;
+    }
+
+    .title-container div {
+        width:100%;
+        background-size:fill;
+        background-repeat:no-repeat;
+        height:40vh;
+    }
+    .artists-container {
+        display:flex;
+        flex-flow:column;
+        align-items:center;
+        padding:5%;
+    }
+    .artist {
+        width:100%;
+        font-size:1.4rem;
+        line-height:1.1;
+    }
+
+    .artist img {
+        object-position:contain;
+        margin: 10% 0 5% 0;
+    }
+
+
+}
