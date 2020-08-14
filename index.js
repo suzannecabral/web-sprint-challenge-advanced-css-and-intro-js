@@ -217,7 +217,12 @@ console.log(artists[2].name);
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 console.log("-------------#2: typo correction -------------");
 
+function fixName(array,index,userString){
+  array[index].name = userString;
+  console.log(`Typo fixed: ${array[index].name}`);
+}
 
+fixName(artists,8,"Vincent van Gogh");
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -227,6 +232,9 @@ console.log("-------------#2: typo correction -------------");
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
+
+console.log("-------------#3: getArtistsByIndex -------------");
+
 function getArtistByIndex(array, index) {
     /* code here */
   }
