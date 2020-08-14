@@ -283,11 +283,13 @@ console.log("-------------#5: removeArtist -------------");
 
 
 
-function removeArtist(/*code here*/) {
-    /* code here */
+function removeArtist(array,index) {
+    console.log(`Removing ${array[index].name}...`);
+    array.splice(index,1);
+    console.log(`${artists.length} artists remain.`);
   }
   
- 
+ removeArtist(artists,0);
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -301,6 +303,9 @@ nationality: Your Nationality Here
 bio: Add 1-2 sentences (or use lorem ipsum) 
 
 At the end, this function should return the new array with information added"*/
+
+
+console.log("-------------#6: addArtist -------------");
 
 function addArtist(/* Code here */){
 
