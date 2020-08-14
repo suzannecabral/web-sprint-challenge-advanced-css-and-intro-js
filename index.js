@@ -369,13 +369,20 @@ Create a function called `getHTML()` that takes the parameter `data` and uses a 
 The function should console.log 50 chunks of HTML code that match the structure above. 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
+console.log("-------------stretch 1: getHTML-------------");
 
-function getHTML(/* Code here */){
+function getHTML(array,index){
 
-    /* Code here */
+    console.log(`<div id="artist">`);
 
+    //there are no associated image urls in the data, so I'm using a placeholder
+    console.log(`<div class="image">`);
+    console.log(`\t <img src="https://picsum.photos/200"/>`);
+    console.log(`</div>`);
+    
   }
 
+getHTML(artists,0);
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
