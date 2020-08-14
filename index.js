@@ -307,11 +307,23 @@ At the end, this function should return the new array with information added"*/
 
 console.log("-------------#6: addArtist -------------");
 
-function addArtist(/* Code here */){
+function addArtist(array,id,name,years,genre,nationality,bio){
 
-    /* Code here */
+    let newArtist = {
+      id:id,
+      name:name,
+      years:years,
+      genre:genre,
+      nationality:nationality,
+      bio:bio,
+    };
 
+    array.push(newArtist);
+    console.log(newArtist);
+    console.log(artists);
   }
+
+ addArtist(artists,20,"Suzanne Cabral","1988-present","Designer","American","Fromage frais lancashire camembert de normandie. Cheesy feet feta pepper jack cheese and wine camembert de normandie babybel cheese slices monterey jack. Mozzarella monterey jack brie jarlsberg squirty cheese bavarian bergkase melted cheese bocconcini. The big cheese cheese on toast stilton melted cheese cheese on toast cauliflower cheese ricotta cheese triangles. Port-salut fondue caerphilly."); 
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -320,6 +332,7 @@ function addArtist(/* Code here */){
 and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
+console.log("-------------#7: lotsOfArt-------------");
 
 function lotsOfArt(/* Code here */){
 
