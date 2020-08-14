@@ -335,7 +335,10 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 console.log("-------------#7: lotsOfArt-------------");
 
 function lotsOfArt(array){
-    let prolificArtists = [];
+    
+  
+  let prolificArtists = [];
+  
     for(let i = 0; i < array.length; i++){
       if(array[i].paintings > 100){
         prolificArtists.push(array[i].name);
