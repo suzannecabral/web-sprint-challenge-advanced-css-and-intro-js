@@ -208,11 +208,21 @@ const artists = [
 (1) Name of the first artist (0th index) in the array
 (2) Bio of the third artist (2nd index) in the array */
 
+console.log("-------------#1: console log Artist Name -------------");
+
+console.log(artists[0].name);
+console.log(artists[2].name);
 
 
 /* Task 2: There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+console.log("-------------#2: typo correction -------------");
 
+function fixName(array,index,userString){
+  array[index].name = userString;
+  console.log(`Typo fixed: ${array[index].name}`);
+}
 
+fixName(artists,8,"Vincent van Gogh");
 
 /* Task 3: Create a function called `getArtistByIndex` that takes two arguments:
  *     (1) artists array
@@ -222,20 +232,40 @@ const artists = [
  * For example, if getArtistByIndex is invoked with the artists dataset and the number 0,
  * it will return `The artist at index 0 is Amedeo Modigliani`.
 */
+
+console.log("-------------#3: getArtistsByIndex -------------");
+
 function getArtistByIndex(array, index) {
-    /* code here */
+    console.log(`The artist at index ${index} is ${array[index].name}`);
   }
   
-  /**
-
+getArtistByIndex(artists,0);
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/* Code here */){
+console.log("-------------#4: get20s -------------");
 
-  /* Code here */
+
+function get20s(array){
+//born in 20th century && died in 20th century
+
+  let cent20Artists = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let artistYears = artists[i].years.split(" - ");
+    for (let i = 0; i < artistYears.length; i++){
+      parseInt(artistYears[i]);
+    }
+    if(artistYears[0] >= 1900 && artistYears[1] < 2000){
+      cent20Artists.push(artists[i].name);
+    }
+    
+  }
+  console.log(cent20Artists);
 
 }
+
+get20s(artists);
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -248,11 +278,18 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
-function removeArtist(/*code here*/) {
-    /* code here */
+
+console.log("-------------#5: removeArtist -------------");
+
+
+
+function removeArtist(array,index) {
+    console.log(`Removing ${array[index].name}...`);
+    array.splice(index,1);
+    console.log(`${artists.length} artists remain.`);
   }
   
- 
+ removeArtist(artists,0);
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -267,11 +304,26 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */){
 
-    /* Code here */
+console.log("-------------#6: addArtist -------------");
 
+function addArtist(array,id,name,years,genre,nationality,bio){
+
+    let newArtist = {
+      id:id,
+      name:name,
+      years:years,
+      genre:genre,
+      nationality:nationality,
+      bio:bio,
+    };
+
+    array.push(newArtist);
+    console.log(newArtist);
+    console.log(artists);
   }
+
+ addArtist(artists,20,"Suzanne Cabral","1988-present","Designer","American","Fromage frais lancashire camembert de normandie. Cheesy feet feta pepper jack cheese and wine camembert de normandie babybel cheese slices monterey jack. Mozzarella monterey jack brie jarlsberg squirty cheese bavarian bergkase melted cheese bocconcini. The big cheese cheese on toast stilton melted cheese cheese on toast cauliflower cheese ricotta cheese triangles. Port-salut fondue caerphilly."); 
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -280,14 +332,20 @@ function addArtist(/* Code here */){
 and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
+console.log("-------------#7: lotsOfArt-------------");
 
-function lotsOfArt(/* Code here */){
-
-  /* Code here */
+function lotsOfArt(array){
+    let prolificArtists = [];
+    for(let i = 0; i < array.length; i++){
+      if(array[i].paintings > 100){
+        prolificArtists.push(array[i].name);
+      }
+    }
+    console.log(prolificArtists);
 
 }
 
-
+lotsOfArt(artists);
 
 // 🎨🎨 STRETCH 🎨🎨//
 
@@ -311,13 +369,20 @@ Create a function called `getHTML()` that takes the parameter `data` and uses a 
 The function should console.log 50 chunks of HTML code that match the structure above. 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
+console.log("-------------stretch 1: getHTML-------------");
 
-function getHTML(/* Code here */){
+function getHTML(array,index){
 
-    /* Code here */
+    console.log(`<div id="artist">`);
 
+    //there are no associated image urls in the data, so I'm using a placeholder
+    console.log(`<div class="image">`);
+    console.log(`\t <img src="https://picsum.photos/200"/>`);
+    console.log(`</div>`);
+    
   }
 
+getHTML(artists,0);
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
