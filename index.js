@@ -246,11 +246,26 @@ getArtistByIndex(artists,0);
 console.log("-------------#4: get20s -------------");
 
 
-function get20s(/* Code here */){
+function get20s(array){
+//born in 20th century && died in 20th century
 
-  /* Code here */
+  let cent20Artists = [];
+
+  for (let i = 0; i < array.length; i++) {
+    let artistYears = artists[i].years.split(" - ");
+    for (let i = 0; i < artistYears.length; i++){
+      parseInt(artistYears[i]);
+    }
+    if(artistYears[0] >= 1900 && artistYears[1] < 2000){
+      cent20Artists.push(artists[i].name);
+    }
+    
+  }
+  console.log(cent20Artists);
 
 }
+
+get20s(artists);
 
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
@@ -263,6 +278,11 @@ function get20s(/* Code here */){
  * 
  * Note that sucessfully invoking this function multiple times without refreshing your browser will continuously remove artists from the array until there are none left. If you refresh your browser, the data will reset.  
 */
+
+console.log("-------------#5: removeArtist -------------");
+
+
+
 function removeArtist(/*code here*/) {
     /* code here */
   }
